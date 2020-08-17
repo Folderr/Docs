@@ -9,6 +9,7 @@ Note: This documentation is not finalized, do not expect the documentation to be
 ## Overview
 
 You can get started with your own Folderr instance by visiting the [Installation guide](./Guides/Folderr/2.0.0/Installation.md "Installing a Folderr instance").
+
 Folderr configuration documentation: [Guides/Config.md](./Guides/Folderr/2.0.0/Config.md "Folderr Configuration")
 
 ## DISCLAIMER
@@ -20,5 +21,7 @@ Using the product waives Folderr from any warranty and puts the responsibility o
 ## LICENSE
 
 This work is licensed under a Create Commons Attribution-NonCommerical-ShareAlike 4.0 International License
+
+The License is under the LICENSE file in the root of the repository. Below is the link for the License on the Creative Commons website as well.
 
 [License Link](https://creativecommons.org/licenses/by-nc-sa/4.0/ "CC BY-NC-SA 4.0")
