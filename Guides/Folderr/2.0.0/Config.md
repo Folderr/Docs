@@ -65,12 +65,12 @@ Configuration for an email server (gmail, personal, GSuite, etc...)
 
 Variable   | Description                                                              | Type    | Example?        | Optional
 ---------- | ------------------------------------------------------------------------ | ------- | --------------- | ---
-port       | Email servers SMTP port                                                  | Number  | `587`           | Yes
-secure     | Whether or not to use TLS when connecting to the server                  | Boolean | `false`         | Yes
-host       | The url of the email server/host                                         | String  | `"example.com"` | No
-requireTLS | [See Nodemailer documentation](https://nodemailer.com/smtp/#tls-options) | Boolean | `false`         | Yes
-ignoreTLS  | No TLS is used (As long as secure is `false`)                            | Boolean | `false`         | Yes
-auth       | [Email server authentication object](#mailer-auth-options)               | Object  |                 | No
+port                         | Email servers SMTP port                                                  | Number  | `587`           | Yes
+secure                       | Whether or not to use TLS when connecting to the server                  | Boolean | `false`         | Yes
+host                         | The url of the email server/host                                         | String  | `"example.com"` | No
+requireTLS                   | [See Nodemailer documentation](https://nodemailer.com/smtp/#tls-options) | Boolean | `false`         | Yes
+ignoreTLS                    | No TLS is used (As long as secure is `false`)                            | Boolean | `false`         | Yes
+[auth](#mailer-auth-options) | Email server authentication object                                       | Object  |               | No
 
 #### Mailer Auth Options
 
