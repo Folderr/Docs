@@ -6,9 +6,9 @@ Folderr requires 2-3 separate YAML files for configuration. These files should b
 
 ## Table of Contents
 
-* [Server Configuration](#basic-configuration)
-* [Emailer Configuration](#email-configuration)
-* [Database Configuration](#Database-configuration)
+* [Server Configuration](#basic-configuration) - required
+* [Emailer Configuration](#email-configuration) - optional
+* [Database Configuration](#Database-configuration) - required
 
 ## Server Configuration
 
