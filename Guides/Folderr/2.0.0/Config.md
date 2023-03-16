@@ -20,9 +20,9 @@ port             | Port number to listen on. `0-65535` are allowed    | Number  
 url              | URL Folderr responds with                          | URL/String        | `https://example.com` | No
 trustProxies     | Whether or not to trust proxies                    | Boolean           | `true`                | Yes
 signups          | State of signups                                   | Number            | `0`                   | No
-sentry           | Sentry Error Logging                               | [Object](#Sentry) | No                    | Yes
+sentry           | Sentry Error Logging                               | [Object](#sentry) | No                    | Yes
 apiOnly          | Whether or not to run with no frontend             | Boolean           | `false`               | Yes
-httpsCertOptions | The certificate options for Folderrs HTTPs         | Object            | [Example](#certificate-configuration) | For insances behind a proxy.
+httpsCertOptions | The certificate options for Folderrs HTTPs         | [Object](#certificate-configuration) | No | For insances behind a proxy.
 
 ### Sentry
 
@@ -53,7 +53,7 @@ url: https://example.com,
 trustProxies: true,
 signups: 0,
 sentry:
-  - dsn: key@hostname.io
+  dsn: key@hostname.io
   tracing: true
   rate: 0.5
 ```
