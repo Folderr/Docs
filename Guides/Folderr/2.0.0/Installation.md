@@ -15,21 +15,31 @@ Overview:
 - [Node-gyp](https://github.com/nodejs/node-gyp) used to build dependencies
 - [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) or [Atlas](https://www.mongodb.com/cloud/atlas)
 
-### Installation
+## Installation
 
 ```sh
-git clone <repo link here>
+git clone <link not available>
 cd folderr
 npm install
+npm run build
 ```
 
 ## Configuration
 
-Once Folderr has finished installing continue on to the configuration guide [here](./Config.md)
+Once Folderr has finished installing continue on to the configuration guide [here](./config.md)
 
 ## Setup
+
+This initially sets folderr up for your owner account and configures encryption keys.
 
 ```sh
 cd folderr
 npm run setup
+```
+
+## Starting
+
+```sh
+cd folderr
+npm start
 ```

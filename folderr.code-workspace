@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"eslint.enable": true,
+		"eslint.format.enable": true,
+		"editor.insertSpaces": false,
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": false
+		},
+		"typescript.format.semicolons": "insert",
+		"typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+		"typescript.format.enable": true,
+		"typescript.preferences.quoteStyle": "double",
+		"typescript.validate.enable": true,
+		"volar.autoCompleteRefs": true,
+		"volar.codeLens.references": true
+	}
+}
