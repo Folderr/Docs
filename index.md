@@ -15,7 +15,7 @@ hero:
     #  link: /api-examples
     - theme: brand
       text: Getting Started
-      link: /guides/folderr/installation
+      link: /guides/folderr/getting-started
 
 features:
   - title: Self-Hostable

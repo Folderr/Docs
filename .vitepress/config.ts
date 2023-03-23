@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   rewrites: {
-    'guides/folderr/2.0.0/installation.md': 'guides/folderr/installation.md',
+    'guides/folderr/2.0.0/getting-started.md': 'guides/folderr/getting-started.md',
     'guides/folderr/2.0.0/config.md': 'guides/folderr/config.md'
   },
   title: "Folderr Docs",
@@ -12,7 +12,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Getting Started', link: '/guides/folderr/installation'}
+      { text: 'Getting Started', link: '/guides/folderr/getting-started'}
     ],
 
     sidebar: [
@@ -26,14 +26,19 @@ export default defineConfig({
       {
         text: 'Guides',
         items: [
-          {text: 'Installation', link: '/guides/folderr/installation'},
+          {text: 'Get Folderr', link: '/guides/folderr/getting-started'},
           {text: 'Config', link: '/guides/folderr/config'}
         ]
       }
     ],
+    footer: {
+      copyright: 'Copyright © 2022-present Folderr',
+      message: 'Docs licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><br>Folderr licensed under AGPL-3.0'
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Folderr/Docs' }
     ]
-  }
+  },
+  cleanUrls: true
 })

@@ -8,9 +8,9 @@ Note: This documentation is not finalized, do not expect the documentation to be
 
 ## Overview
 
-You can get started with your own Folderr instance by visiting the [Installation guide](./Guides/Folderr/2.0.0/Installation.md "Installing a Folderr instance").
+You can get started with your own Folderr instance by visiting [Guides/getting-started.md](./Guides/Folderr/2.0.0/getting-started.md "Installing a Folderr instance").
 
-Folderr configuration documentation: [Guides/Config.md](./Guides/Folderr/2.0.0/Config.md "Folderr Configuration")
+Folderr configuration documentation: [Guides/config.md](./Guides/Folderr/2.0.0/config.md "Folderr Configuration")
 
 ## DISCLAIMER
 

@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started <Badge type="warning" text="beta" />
 
 Overview:
 
@@ -10,10 +10,10 @@ Overview:
 ## Requirements
 
 - [Git](https://git-scm.com/downloads)
-- [NodeJS](https://nodejs.org) version 16 or higher
+- [NodeJS](https://nodejs.org) version 16 or higher with crypto support
 - [TypeScript](https://www.typescriptlang.org/index.html#download-links)
 - [Node-gyp](https://github.com/nodejs/node-gyp) used to build dependencies
-- [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) or [Atlas](https://www.mongodb.com/cloud/atlas)
+- [MongoDB Server Community or Enterprise](https://docs.mongodb.com/manual/administration/install-community/) or [Atlas](https://www.mongodb.com/cloud/atlas)
 
 ## Installation
 
