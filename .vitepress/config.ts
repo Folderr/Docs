@@ -16,13 +16,13 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
+      /*{
         text: 'Examples',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
-      },
+      },*/
       {
         text: 'Guides',
         items: [
@@ -33,7 +33,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Folderr/Folderr' }
+      { icon: 'github', link: 'https://github.com/Folderr/Docs' }
     ]
   }
 })
