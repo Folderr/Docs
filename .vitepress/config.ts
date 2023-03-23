@@ -2,13 +2,24 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  srcExclude: ['README.md', '**/README.md', './README.md'],
   rewrites: {
-    'guides/folderr/2.0.0/getting-started.md': 'guides/folderr/getting-started.md',
-    'guides/folderr/2.0.0/config.md': 'guides/folderr/config.md'
+    'guides/folderr/2.0.0/:page': 'guides/folderr/:page',
   },
   title: "Folderr Docs",
   description: "FOSS File Host and Link Shortener Documentation",
+  lastUpdated: true,
   themeConfig: {
+    lastUpdatedText: 'Updated at',
+    editLink: {
+      pattern: ({relativePath}) => {
+        if (relativePath.startsWith('guides') && relativePath.includes('folderr')) {
+          return `https://github.com/Folderr/Docs/blob/master/Guides/Folderr/2.0.0/${relativePath.split('/')[2]}`
+        } else {
+          return `https://github.com/Folderr/Docs/blob/master/${relativePath}`
+        }
+      }
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
