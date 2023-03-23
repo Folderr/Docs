@@ -7,8 +7,9 @@ Folderr requires 2-3 separate YAML files for configuration. These files should b
 ## Table of Contents
 
 * [Server Configuration](#server-configuration) - required
-* [Emailer Configuration](#email-configuration) - optional
 * [Database Configuration](#database-configuration) - required
+* [Emailer Configuration](#email-configuration) - optional
+
 
 ## Server Configuration
 
@@ -58,6 +59,21 @@ sentry:
   rate: 0.5
 ```
 
+## Database Configuration
+
+This goes in `configs/database.yaml`, and is 100% required.
+
+Variable     | Description       | Type | Example?                      | Optional
+------------ | ----------------- | ---- | ----------------------------- | ---
+url          | The database URL  | URL  | `mongodb://localhost/Folderr` | No
+
+
+### Database Example
+
+```yaml
+url: mongodb://localhost/folderr
+```
+
 ## Email Configuration
 
 Configuration for emails. Goes in `configs/email.yaml`. 100% optional.
@@ -99,19 +115,4 @@ mailerOptions:
     port: 587,
     host: example.com
 sendingEmail: No-Reply <no-reply@example.com>,
-```
-
-## Database Configuration
-
-This goes in `configs/database.yaml`, and is 100% required.
-
-Variable     | Description       | Type | Example?                      | Optional
------------- | ----------------- | ---- | ----------------------------- | ---
-url          | The database URL  | URL  | `mongodb://localhost/Folderr` | No
-
-
-### Database Example
-
-```yaml
-url: mongodb://localhost/folderr
 ```
