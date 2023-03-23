@@ -6,7 +6,6 @@ export default defineConfig({
   rewrites: {
     'guides/folderr/2.0.0/:page': 'guides/folderr/:page',
   },
-  ignoreDeadLinks: true,
   title: "Folderr Docs",
   description: "FOSS File Host and Link Shortener Documentation",
   lastUpdated: true,

@@ -1,4 +1,4 @@
-# Configuration (Guide)
+# Configuration
 
 This guide will go over how to configure Folderr and explain the configuration.
 
