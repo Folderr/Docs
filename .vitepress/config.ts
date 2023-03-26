@@ -38,7 +38,8 @@ export default defineConfig({
         text: 'Guides',
         items: [
           {text: 'Get Folderr', link: '/guides/folderr/getting-started'},
-          {text: 'Config', link: '/guides/folderr/config'}
+          {text: 'Config', link: '/guides/folderr/config'},
+          {text: 'Deploy', link: '/guides/folderr/deployment'}
         ]
       }
     ],
