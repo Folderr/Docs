@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Folderr Docs"
+  name: "Folderr (docs)"
   text: "FOSS File Host and Link Shortener Documentation"
   tagline: easy to use, fast, and powerful
   actions:
