@@ -1,6 +1,6 @@
 # Getting Started <Badge type="warning" text="beta" />
 
-Overview:
+## Table of Contents
 
 - [Requirements](#requirements)
 - [Installation](#installation)
