@@ -79,6 +79,7 @@ folderr-cli.exe init
 
 Plans for Folderr CLI
 
+- Have the ability to download an executable from github.
 - Better key management
 - Owner transfership (maybe)
 - Account management
