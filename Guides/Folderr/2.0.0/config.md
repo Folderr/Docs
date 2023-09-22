@@ -15,15 +15,21 @@ Folderr requires 2-3 separate YAML files for configuration. These files should b
 
 The basic configuration for the service is: `port`, `url`, `trustProxies`, `signups`, and `auth`. Kept in `configs/server.yaml`
 
-Variable     | Description                                            | Type              | Example?                  | Optional
------------- | ------------------------------------------------------ | ----------------- | ------------------------- | ---
+Variable     | Description                                            | Type              | Example?              | Optional
+------------ | ------------------------------------------------------ | ----------------- | --------------------- | ---
 port             | Port number to listen on. `0-65535` are allowed    | Number            | `8888`                | Yes
 url              | URL Folderr responds with                          | URL/String        | `https://example.com` | No
-trustProxies     | Whether or not to trust proxies                    | Boolean           | `true`                | Yes
-signups          | State of signups                                   | Number            | `0`                   | No
+trustProxies     | Whether or not to trust proxies                    | Boolean           | `false` (default)     | Yes
+signups          | State of signups                                   | Number            | `0` (default)         | No
 sentry           | Sentry Error Logging                               | [Object](#sentry) |                       | Yes
-apiOnly          | Whether or not to run with no frontend             | Boolean           | `false`               | Yes
-httpsCertOptions | The certificate options for Folderrs HTTPs         | [Object](#certificate-configuration) | | For insances behind a proxy.
+apiOnly          | Whether or not to run with no frontend             | Boolean           | `false`, default      | Yes
+httpsCertOptions | The certificate options for Folderrs HTTPs         | [Object](#certificate-configuration) |    | For insances behind a proxy.
+
+#### Signup states
+
+- `0` - Disabled
+- `1` - Admin acceptance only
+- `2` - Use emails
 
 #### Sentry
 
@@ -32,8 +38,8 @@ Third-Party error logging and problem metrics service. Really only useful for de
 Variable     | Description                                | Type       | Example? | Optional
 ------------ | ------------------------------------------ | ---------- | -------- | ---
 dsn          | This is a URL                              | URL        |          | No
-tracing      | Whether or not requests should be tracked  | Boolean    | `true`   | Yes
-rate         | % of transactions to record                | Number 0-1 | 0.2      | Yes
+tracing      | Whether or not requests should be tracked  | Boolean    | `false`  | Yes
+rate         | % of transactions to record                | Number 0-1 | `0.2`    | Yes
 
 #### Certificate Configuration
 
@@ -44,7 +50,7 @@ Variable    | Description                                                       
 key         | Path to private key                                                                | String          | `/home/example/private.key` | No
 cert        | Path to certificate                                                                | String          | `/home/example/cert.pem`    | No
 requestCert | Server will request a certificate from clients & attempt to verify the certificate | Boolean         | `false`                     | Yes
-ca          | Array of paths to a CA cert                                                        | `Array<String>` | `- /path/to/cert.pem`     | Yes
+ca          | Array of paths to a CA cert                                                        | `String Array`  | `/path/to/cert.pem`         | Yes
 
 ### Server Example
 
@@ -62,8 +68,9 @@ sentry:
 ## Database Configuration
 
 This goes in `configs/database.yaml`, and is 100% required.
+Folderr will not function without it, under any circumstance.
 
-Variable     | Description       | Type | Example?                      | Optional
+Variable     | Description       | Type | Example or Default?           | Optional
 ------------ | ----------------- | ---- | ----------------------------- | ---
 url          | The database URL  | URL  | `mongodb://localhost/Folderr` | No
 
@@ -78,41 +85,51 @@ url: mongodb://localhost/folderr
 
 Configuration for emails. Goes in `configs/email.yaml`. 100% optional.
 
-Variable                         | Description                | Type   | Example?               | Optional
--------------------------------- | -------------------------- | ------ | ---------------------- | ---
-sendingEmail                     | Email the emailer displays | String | `no-reply@example.com` | Yes
-[mailerOptions](#mailer-options) | Options for emailer        | Object |                        | Yes
+Variable                         | Description                        | Type    | Example or Default?    | Optional
+-------------------------------- | ---------------------------------- | ------- | ---------------------- | ---
+sendingEmail                     | Email the emailer displays         | String  | `no-reply@example.com` | Yes
+[mailerOptions](#mailer-options) | Options for emailer                | Object  |                        | Yes
+selfTest                         | Whether or not to test the emailer | Boolean | `true`, default        | Yes
 
 ### Mailer Options
 
 Configuration for an email server (gmail, personal, GSuite, etc...)
 
-Variable   | Description                                                                                | Type    | Example?      | Optional
----------- | ------------------------------------------------------------------------------------------ | ------- | ------------- | ----
-port                         | Email servers SMTP port                                                  | Number  | `587`         | Yes
-secure                       | Whether or not to use TLS when connecting to the server                  | Boolean | `false`       | Yes
-host                         | The url of the email server/host                                         | String  | `example.com` | No
-requireTLS                   | [See Nodemailer documentation](https://nodemailer.com/smtp/#tls-options) | Boolean | `false`       | Yes
-ignoreTLS                    | No TLS is used (As long as secure is `false`)                            | Boolean | `false`       | Yes
-[auth](#mailer-auth-options) | Email server authentication object                                       | Object  |               | No
+Variable   | Description                                                                                | Type    | Example or Default? | Optional
+---------- | ------------------------------------------------------------------------------------------ | ------- | ------------------- | ----
+port                         | Email servers SMTP port                                                  | Number  | `587`               | Yes
+secure                       | Whether or not to use TLS when connecting to the server                  | Boolean | `false`             | Yes
+host                         | The url of the email server/host                                         | String  | `example.com`       | No
+requireTLS                   | [See Nodemailer documentation](https://nodemailer.com/smtp/#tls-options) | Boolean | `false`             | Yes
+ignoreTLS                    | No TLS is used (As long as secure is `false`)                            | Boolean | `false`             | Yes
+[auth](#mailer-auth-options) | Email server authentication object                                       | Object  |                     | No
+[tls](#mailer-tls-options)   | Options for TLS                                                          | Object  |                     | Yes
 
 #### Mailer Auth Options
 
 Authentication options to connect to the server host.
 
-Variable                 | Description                         | Type   | Example?      | Optional
------------------------- | ----------------------------------- | ------ | ------------- | ---
-user                     | The username of the user to log in  | String | `"no-reply"`  | No
-pass                     | The password of the user logging in | String |               | No
+Variable | Description                         | Type   | Example?      | Optional
+-------- | ----------------------------------- | ------ | ------------- | ---
+user     | The username of the user to log in  | String | `"no-reply"`  | No
+pass     | The password of the user logging in | String |               | No
+
+#### Mailer TLS Options
+
+Variable           | Description                                   | Type    | Example or Default? | Optional
+-------------------| --------------------------------------------- | ------- | ------------------- | ---
+rejectUnauthorized | Whether or not to reject invalid certificates | Boolean | `false`, default    | No
 
 ### Email Example
 
 ```yaml
 mailerOptions:
     auth: 
-        user: no-reply,
-        pass: SomePassword,
-    port: 587,
+        user: no-reply
+        pass: SomePassword
+    port: 587 # One of the standard SMTP ports, along with 443.
     host: example.com
+    tls:
+      rejectUnauthorized: false # In case you have a bad certificate.
 sendingEmail: No-Reply <no-reply@example.com>,
 ```
