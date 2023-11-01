@@ -14,8 +14,11 @@ hero:
     #  text: API Examples
     #  link: /api-examples
     - theme: brand
-      text: Getting Started
+      text: Getting Started ->
       link: /guides/folderr/getting-started
+    - theme: alt
+      text: Use our CLI ->
+      link: /guides/cli/getting-started
 
 features:
   - title: Self-Hostable

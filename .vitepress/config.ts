@@ -6,7 +6,8 @@ export default defineConfig({
     'README.md',
     '**/README.md',
     './README.md',
-    '**/CODE_OF_CONDUCT.md'
+    '**/CODE_OF_CONDUCT.md',
+    'CODE_OF_CONDUCT.md'
   ],
   rewrites: {
     'guides/folderr/2.0.0/:page': 'guides/folderr/:page',
