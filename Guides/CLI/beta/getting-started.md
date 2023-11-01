@@ -20,7 +20,7 @@ build it yourself steps:
 2. clone repository from https://github.com/Folderr/folderr-cli
 3. navigate to cli directory
 4. run `go build .`
-5. move executable to path
+5. move executable to PATH [variable]
 6. (linux): run `chmod +x folderr-cli`
 
 Example:
@@ -30,7 +30,7 @@ All of these assume you have git and go installed
 ::: details Windows Installation Note
 We recommend copying Folderr-CLI to a path that is in your user folder and your PATH.
 
-You can see your path by doing
+You can see your PATH by doing
 ```powershell
 $env:PATH
 ```
@@ -79,7 +79,7 @@ folderr-cli.exe init
 
 Plans for Folderr CLI
 
-- Have the ability to download an executable from github.
+- Have the ability to download an executable from github. (Flatpak, native maybe, etc)
 - Better key management
 - Owner transfership (maybe)
 - Account management
