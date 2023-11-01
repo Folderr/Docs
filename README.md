@@ -12,6 +12,8 @@ Note: This documentation is not finalized, do not expect the documentation to be
 
 ## Overview
 
+This Documentation is a [Vitepress](https://vitepress.dev) site, so, a bunch of markdown files with a website attached.
+
 You can get started with your own Folderr instance by visiting [Guides/getting-started.md](./Guides/Folderr/2.0.0/getting-started.md "Installing a Folderr instance").
 
 Folderr configuration documentation: [Guides/config.md](./Guides/Folderr/2.0.0/config.md "Folderr Configuration")

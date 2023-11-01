@@ -2,7 +2,12 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  srcExclude: ['README.md', '**/README.md', './README.md'],
+  srcExclude: [
+    'README.md',
+    '**/README.md',
+    './README.md',
+    '**/CODE_OF_CONDUCT.md'
+  ],
   rewrites: {
     'guides/folderr/2.0.0/:page': 'guides/folderr/:page',
     'guides/cli/beta/:page': 'guides/cli/:page'
@@ -11,6 +16,9 @@ export default defineConfig({
   description: "FOSS File Host and Link Shortener Documentation",
   lastUpdated: true,
   themeConfig: {
+    search: {
+      provider: 'local',
+    },
     lastUpdatedText: 'Updated at',
     editLink: {
       pattern: ({relativePath}) => {
