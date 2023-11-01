@@ -18,6 +18,16 @@ You can get started with your own Folderr instance by visiting [Guides/getting-s
 
 Folderr configuration documentation: [Guides/config.md](./Guides/Folderr/2.0.0/config.md "Folderr Configuration")
 
+## Contributing
+
+Thanks for your interest in contributing.
+
+First we ask that you please read the [code of conduct](./CODE_OF_CONDUCT.md)
+
+Please do not spam us with typos.
+
+That's all you need to do (for now). Have a fun time.
+
 ## DISCLAIMER
 
 Your usual disclaimer no one reads.
