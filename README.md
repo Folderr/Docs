@@ -1,8 +1,12 @@
-# Documentation
+# Folderr Documentation
 
-Official Folderr documentation.
+Official documentation for Folderr and all related projects.
 
 Folderr is a file hosting and link shortening service with a focus on Open Source and user customization.
+
+Folderr CLI (beta) is a management interface for Folderr 
+
+Hosted at https://folderr.net or https://github.com/Folderr/Docs
 
 Note: This documentation is not finalized, do not expect the documentation to be accurate.
 
