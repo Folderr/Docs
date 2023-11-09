@@ -1,6 +1,6 @@
 # Folderr CLI <Badge type="warning" text="beta" />
 
-Folderr CLI (command-line: folderr-cli) is a new way to manage Folderr
+Folderr CLI (command-line: foldcli) is a new way to manage Folderr
 Currently under-development however it has the following abilities:
 - The ability to install Folderr
 - Set up Folderr's database and security keys
@@ -17,25 +17,25 @@ Currently the only way to "install" Folderr CLI is to build it yourself using Go
 
 build it yourself steps:
 1. install go (https://go.dev)
-2. clone repository from https://github.com/Folderr/folderr-cli
+2. clone repository from https://github.com/Folderr/foldcli
 3. navigate to cli directory
 4. run `go build .`
 5. move executable to PATH [variable]
-6. (linux): run `chmod +x folderr-cli`
+6. (linux): run `chmod +x foldcli`
 
 Example:
 
 All of these assume you have git and go installed
 
 ::: details Windows Installation Note
-We recommend copying Folderr-CLI to a path that is in your user folder and your PATH.
+We recommend copying Folderr CLI to a path that is in your user folder and your PATH.
 
 You can see your PATH by doing
 ```powershell
 $env:PATH
 ```
 
-So something like `C:\Users\folderr\Tools\folderr-cli.exe` would be ideal as
+So something like `C:\Users\folderr\Tools\foldcli.exe` would be ideal as
 - it allows you to use the executable without privilege elevation (admin) and
 - modify it (when a new version is out) without needing admin rights.
 You can also append something like `C:\Users\folderr\Tools` to your path
@@ -44,23 +44,23 @@ Note: `folderr` is just a example
 ::: code-group
 ```sh [Linux, Admin]
 # assumption: you are admin
-git clone https://github.com/Folderr/folderr-cli
-cd folderr-cli
+git clone https://github.com/Folderr/foldcli
+cd foldcli
 go build .
-chmod +x folderr-cli
-sudo cp folderr-cli /bin
+chmod +x foldcli
+sudo cp foldcli /bin
 ```
 ```sh [Linux, Non-Admin]
 # assumption: you are not admin
-git clone https://github.com/Folderr/folderr-cli
-cd folderr-cli
+git clone https://github.com/Folderr/foldcli
+cd foldcli
 go build .
-chmod +x folderr-cli
-cp folderr-cli $HOME/bin
+chmod +x foldcli
+cp foldcli $HOME/bin
 ```
 ```powershell [Windows, PowerShell Core]
-git clone https://github.com/Folderr/folderr-cli
-cd folderr-cli
+git clone https://github.com/Folderr/foldcli
+cd foldcli
 go build .
 # See tip for how to copy it to a directory
 ```
@@ -69,10 +69,10 @@ go build .
 Now you can restart your terminal and use it like
 ::: code-group
 ```sh [Linux]
-folderr-cli init
+foldcli init
 ```
 ```powershell [Windows]
-folderr-cli.exe init
+foldcli.exe init
 ```
 :::
 ## Future Plans
