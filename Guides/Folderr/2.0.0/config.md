@@ -85,11 +85,11 @@ url: mongodb://localhost/folderr
 
 Configuration for emails. Goes in `configs/email.yaml`. 100% optional.
 
-Variable                         | Description                        | Type    | Example or Default?    | Optional
--------------------------------- | ---------------------------------- | ------- | ---------------------- | ---
-sendingEmail                     | Email the emailer displays         | String  | `no-reply@example.com` | Yes
-[mailerOptions](#mailer-options) | Options for emailer                | Object  |                        | Yes
-selfTest                         | Whether or not to test the emailer | Boolean | `true`, default        | Yes
+Variable                         | Description                                                                  | Type    | Example or Default?    | Optional
+-------------------------------- | ---------------------------------------------------------------------------- | ------- | ---------------------- | ---
+sendingEmail                     | Email the emailer displays                                                   | String  | `no-reply@example.com` | Yes
+[mailerOptions](#mailer-options) | Options for emailer                                                          | Object  |                        | Yes
+selfTest                         | Whether or not to test the emailer by sending an email to the `sendingEmail` | Boolean | `true`, default        | Yes
 
 ### Mailer Options
 
@@ -131,5 +131,5 @@ mailerOptions:
     host: example.com
     tls:
       rejectUnauthorized: false # In case you have a bad certificate.
-sendingEmail: No-Reply <no-reply@example.com>,
+sendingEmail: "No-Reply <no-reply@example.com>"
 ```

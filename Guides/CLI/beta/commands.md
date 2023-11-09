@@ -89,6 +89,7 @@ Usage:
   folderr-cli install [flags]
 
 Flags:
+  -a, --authorization    Authorization token for private repositories. Init will fail if the repository is private and this is not used.
   -h, --help   help for install
 
 Global Flags:
