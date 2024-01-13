@@ -72,5 +72,11 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Folderr/Docs' }
     ]
   },
-  cleanUrls: true
+  cleanUrls: true,
+  head: [
+      [
+          'link',
+          {rel: 'icon', href: '/favicon.ico'}
+      ]
+  ]
 })
