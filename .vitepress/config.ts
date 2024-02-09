@@ -79,7 +79,7 @@ export default defineConfig({
           'link',
           {rel: 'icon', href: '/favicon.ico'}
       ],
-      ['meta', {property: "og:image", content: 'https://folderr.net/Banner.png'}],
+      ['meta', {property: "og:image", content: 'https://folderr.net/OG-Banner.png'}],
       ['meta', {property: "og:url", content: 'https://folderr.net'}],
       ['meta', {property: "og:site_name", content: "Folderr Documentation" }],
       ['meta', {property: "og_type", content: 'website'}],
