@@ -14,9 +14,10 @@ export default defineConfig({
     'guides/cli/beta/:page': 'guides/cli/:page'
   },
   title: "Folderr Docs",
-  description: "FOSS File Host and Link Shortener Documentation",
+  description: "Folderr | FOSS File Host and Link Shortener, and Related Projects",
   lastUpdated: true,
   themeConfig: {
+    logo: '/Icon-512.svg',
     search: {
       provider: 'local',
     },
@@ -77,6 +78,12 @@ export default defineConfig({
       [
           'link',
           {rel: 'icon', href: '/favicon.ico'}
-      ]
+      ],
+      ['meta', {property: "og:image", content: 'https://folderr.net/Banner.png'}],
+      ['meta', {property: "og:url", content: 'https://folderr.net'}],
+      ['meta', {property: "og:site_name", content: "Folderr Documentation" }],
+      ['meta', {property: "og_type", content: 'website'}],
+      ['meta', {name: "theme-color", content: "#2ECC71"}],
+      ['meta', {property: "og:description", content: "Folderr | FOSS File Host and Link Shortener, and Related Projects"}]
   ]
 })
