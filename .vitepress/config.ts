@@ -85,6 +85,7 @@ export default defineConfig({
       ['meta', {property: "og_type", content: 'website'}],
       ['meta', {name: "theme-color", content: "#2ECC71"}],
       ['meta', {property: "og:description", content: "Folderr | FOSS File Host and Link Shortener, and Related Projects"}],
-      ['meta', {name: "twitter:card", content: "summary_large_image"}]
+      ['meta', {name: "twitter:card", content: "summary_large_image"}],
+      ['meta', {property: "og:title", content: "Folderr Docs | FOSS File Host"}]
   ]
 })
