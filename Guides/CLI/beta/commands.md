@@ -1,14 +1,14 @@
 # CLI Commands <Badge text="Work in Progress" type="warning" />
 
-Hi, were going to be covering the CLI commands that come with the current version of **Folderr CLI** <Badge text="beta" type="warning" />
+Hi, were going to be covering the CLI commands that come with the current version of **foldcli** <Badge text="beta" type="warning" />
 
 Please note this page is a work in progress
 
 ## Table of Contents
 
-* [Initial Setup](#setup)
-* [App & Services Setup](#setup-applications-and-services)
-* [Miscellaneous](#miscellaneous)
+- [Initial Setup](#setup)
+- [App & Services Setup](#setup-applications-and-services)
+- [Miscellaneous](#miscellaneous)
 
 ## Setup
 
@@ -59,10 +59,11 @@ Flags:
 
 Next we have the `setup owner` command which sets up the owner account on the Folderr instance.
 Won't work if there is already an owner
+
 ```sh
 foldcli setup owner
 
-Set's up the owner account on your Folderr instance
+Sets up the owner account on your Folderr instance
 Requires MONGO_URI environment variable to be set
 db_name is required for uploading the account
 Runs interactively if the all the flags are not set. Will use any flags set however.
@@ -81,6 +82,7 @@ Global Flags:
 ```
 
 Next we have the `install` command which installs Folderr. May be used later for more things.
+
 ```sh
 foldcli install
 Checks for Folderrs dependencies and installs Folderr
@@ -96,14 +98,41 @@ Global Flags:
       --dry   Runs the command but does not change anything
 ```
 
+## Encryption Key Management
+
+The `keygen` command is useful for generating public/private keypairs for Folderr
+
+It also allows us to test `foldcli`s keys againt Folderr, which is made especially easy with [this repository](https://github.com/Folderr/jwt-keytests)
+
+```sh
+foldcli keygen
+
+Generate a private/public keypair according to Folderrs standards
+
+Usage:
+  foldcli keygen <path_for_private_key> <path_for_public_key> [flags]
+
+Examples:
+foldcli keygen /home/fldrr/keys/private.pem /home/fldrr/keys/public.pem
+
+Flags:
+  -f, --force   Override the current keys, if they eixst
+  -h, --help    help for keygen
+
+Global Flags:
+      --dry   Runs the command but does not change anything
+```
+
 ## Miscellaneous
 
 The only command we have here for now is the `version` command. Which prints the version
-May have more versions than just the Folderr CLIs later.
+May have more versions than just foldcli's later.
+
 ```sh
 foldcli version
 Shows the version of the CLI
 
 Usage: foldcli version
 ```
-Current version as of writing: Alpha 0.0.2
+
+Current version as of writing: Alpha 0.0.6
