@@ -6,6 +6,7 @@ hero:
   name: "Folderr (docs)"
   text: "FOSS File Host and Link Shortener Documentation"
   tagline: easy to use, fast, and powerful
+  image: /Icon-512.svg
   actions:
     #- theme: brand
     #  text: Markdown Examples
@@ -22,12 +23,19 @@ hero:
 
 features:
   - title: Self-Hostable
-    details: easily host and manage anywhere
+    icon:
+      src: /server.svg
+    details: host and manage Folderr anywhere, on a cloud or on your own servers
   - title: Open Source
-    details: verify code integrity and security at any time
+    icon:
+      src: /open_source.svg
+    details: anyone is able to check for malicious code, and check for for vulnerabilities
   - title: Unbiased
-    details: Folderr doesn't care who you are or what you do, outside of it.
+    icon:
+      src: /eye_slash.svg
+    details: We don't care who you are, we only care about what you do on our platform
   - title: For the User
-    details: designed to allow users to utilize their own domains
+    icon:
+      src: /user_group.svg
+    details: designed to allow users to utilize their own domains and for ease of use
 ---
-
