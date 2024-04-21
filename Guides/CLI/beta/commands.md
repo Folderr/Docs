@@ -12,26 +12,53 @@ Please note this page is a work in progress
 
 ## Setup
 
-To setup Folderr CLI there is one command. It is called `init`
+To setup Folderr CLI there is multiple commands all under one `init` command
+
+`init` is a dummy command, it does nothing
 
 ```sh
-foldcli init
+foldcli init folderr
 
-Initializes your foldcli and its config. Either interactivity or non-interactively.
-To use the interacivity you will need to not provide the directory or repository options
+Initalize your Folderr CLI config interactively or non-interactively.
+If a repository is provided non-interactively, the authorization flag MUST be supplied if it is private or else it will fail.
+Interactivity happens when you do not provide the listed arguments (excluding flags)
 
-Usage: foldcli init [directory] [repository] [flags]
-Directory: Where to store Folderr if you install it
-Repository: Where to acquire Folderr from. i.e https://github.com/Folderr/secretive-url
+Usage:
+  foldcli init folderr [directory] [repository] [flags]
+
+Definitions:
+  Directory: Where to store Folderr if you install it
+  Repository: Where to acquire Folderr from. i.e https://github.com/Folderr/secretive-url
 
 Flags:
-  -a, --authorization    Authorization token for private repositories. Init will fail if the repository is private and this is not used.
-  -h, --help             Help for foldcli init
-      --mkdir            Make directories if they do not exist
-  -o, --override         Forcefully overrides previous configurations of Folderr CLI. Good for testing or misconfiguration.
+  -a, --authorization string   Authorization token for private repositories
+      --dry                    Whether or not to run the command in dry-run mode
+  -h, --help                   help for foldcli init folderr
+      --mkdir                  Make directories if they don't exist
+  -o, --override               Override previous settings
+```
+
+```sh
+foldcli init db
+
+Initalize config for database related commands
+
+Usage:
+  foldcli init db <database uri> <database name> [flags]
+
+Aliases:
+  db, database
+
+Examples:
+  foldcli init db mongodb://localhost/folderrV2?tls=true folderr
+  foldcli init db mongodb://username:password@127.0.0.1/folderrV2 folderr
+
+Flags:
+  -h, --help       help for foldcli init db
+  -o, --override   Override previous settings
 
 Global Flags:
-      --dry              Runs the command, does not change anything. Good for testing and development.
+      --dry   Runs the command but does not change anything
 ```
 
 ## Setup Applications and Services
@@ -44,17 +71,25 @@ First we have `setup db` which sets up Folderrs database and encryption keys
 foldcli setup db
 
 Set up Folderr's database structures and security (encryption) keys
-Returns the private key in a file AND as output
+Saves private & public keys to the path, and tries to install the private key to Folderr
 db_name is the name of the database you'll use for your Folderr install
-path is where the keys get saved. Default: $HOME/.folderr/cli/
-Requires the MONGO_URI environment variable to be set before use.
+save_path is where the keys get saved. Default: $HOME/.folderr/cli/
 
-Usage: foldcli setup db [db_name] (path_for_private_key)
+NOTES:
+Does not have dry-run mode. Cannot accurately test with a dry run mode.
+Test with "test" env variable. Do not use production database name/url when testing.
+REQUIRES Folderr to be installed
+
+Usage:
+  foldcli setup db (save_path) [flags]
 
 Flags:
-  -h, --help         help for db
+  -h, --help         help for foldcli setup db
       --no-cleanup   Does not cleanup if running in test mode. Only useful for data peekers and developers.
   -v, --verbose      Shows information aside from key output.
+
+Global Flags:
+      --dry   Runs the command but does not change anything
 ```
 
 Next we have the `setup owner` command which sets up the owner account on the Folderr instance.
@@ -63,10 +98,9 @@ Won't work if there is already an owner
 ```sh
 foldcli setup owner
 
-Sets up the owner account on your Folderr instance
+Set's up the owner account on your Folderr instance
 Requires MONGO_URI environment variable to be set
 db_name is required for uploading the account
-Runs interactively if the all the flags are not set. Will use any flags set however.
 
 Usage:
   foldcli setup owner [db_name] [flags]
