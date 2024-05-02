@@ -72,7 +72,6 @@ foldcli setup db
 
 Set up Folderr's database structures and security (encryption) keys
 Saves private & public keys to the path, and tries to install the private key to Folderr
-db_name is the name of the database you'll use for your Folderr install
 save_path is where the keys get saved. Default: $HOME/.folderr/cli/
 
 NOTES:
@@ -99,8 +98,7 @@ Won't work if there is already an owner
 foldcli setup owner
 
 Set's up the owner account on your Folderr instance
-Requires MONGO_URI environment variable to be set
-db_name is required for uploading the account
+Please run "foldcli init db" before running this command
 
 Usage:
   foldcli setup owner [db_name] [flags]
@@ -118,7 +116,7 @@ Global Flags:
 Next we have the `install` command which installs Folderr. May be used later for more things.
 
 ```sh
-foldcli install
+foldcli install folderr
 Checks for Folderrs dependencies and installs Folderr
 
 Usage:
