@@ -27,7 +27,7 @@ We also assume you have already configured Folderr and set it up.
 ## Ways to Deploy Folderr
 
 There are several ways to deploy Folderr
-- [PM2](https://npmjs.com/package/pm2) - Our favorite. However it is memory intensive.
+- [PM2](https://npmjs.com/package/pm2) - Easy to use. For a process monitor, it's fairly memory intensive.
 - Systemd - Not very memory intensive, not very feature-full, limited to `Linux` operating systems
 
 If you have any others you would like us to include, hit the ***Edit this page*** link at the bottom of the page.
