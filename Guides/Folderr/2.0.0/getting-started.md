@@ -54,7 +54,7 @@ Folderr holds sensitive data. Other users should not be able to access Folderr.
 That's why we `chmod 770` the `folderr` directory
 :::
 ::: code-group
-```sh [Rocky Linux/RHEL Admin]
+```sh [Linux, Admin]
 cd /etc
 sudo git clone <link not available> folderr
 sudo chown folderr:folderr folderr
@@ -62,7 +62,7 @@ sudo chmod 770 folderr
 cd folderr
 npm install
 ```
-```sh [Rocky Linux/RHEL User]
+```sh [Linux, User]
 git clone <link not available> folderr
 chmod 770 folderr
 cd folderr
