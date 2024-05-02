@@ -107,4 +107,4 @@ npm run build:production
 
 ## Deployment
 
-Starting & Deploying Folderr can be done by following [the deployment guide for Folderr](../../../Guides/Folderr/2.0.0/deployment.md)
+Starting & Deploying Folderr can be done by following [the deployment guide for Folderr](../../guides/folderr/deployment.md)
