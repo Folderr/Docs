@@ -46,6 +46,8 @@ You can install Folderr anywhere. For normal user installation we use `/home/fol
 
 ## Initalize Folderr & Databases
 
+
+### Init Folderr
 Initalizing Folderr can be done with the `foldcli init folderr` command found at [commands/setup](./commands.md#setup)
 
 Examples:
@@ -58,6 +60,7 @@ foldcli init folderr /home/folderr/folderr <repository>
 ```
 :::
 
+### Init Database
 Database initializing is similar, with `foldcli init db` (found at [commands/setup](./commands.md#setup))
 
 Ex:
@@ -72,14 +75,14 @@ Installing Folderr with the cli is as easy as
 foldcli install folderr
 ```
 
-## Setup Folderr's Onwer Account & It's Database
+## Setup the Owner Account & Folderrs Database
 
-### Setup the owner account
+### Setup Owner
 To setup the owner account you can use the `foldcli setup owner` command found at [commands/setup applications and services](./commands.md#setup-applications-and-services)
 
 Example: `foldcli setup owner --email folderr@example.com --username folderr --password IFailThePasswordCheck`
 
-### Setup the database
+### Setup Database
 Setting up the owner is very similar, just use `foldcli setup db` (found at [commands/setup applications and services](./commands.md#setup-applications-and-services))
 
 Just run
