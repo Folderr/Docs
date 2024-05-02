@@ -60,6 +60,7 @@ export default defineConfig({
         text: 'CLI Guides',
         items: [
           {text: 'Get Started with Folderr CLI', link: '/guides/cli/getting-started'},
+          {text: 'Folderr Administration', link: 'guides/cli/folderr-administration'},
           {text: 'Command Reference', link: '/guides/cli/commands'}
         ]
       }
