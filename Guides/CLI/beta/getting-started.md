@@ -8,10 +8,36 @@ Currently under-development however it has the following abilities:
 
 ## Table of Contents
 
-* [Install](#install)
+* [Install From Release](#install-from-release)
+* [Install From Source](#install-from-source)
 * [Future Plans](#future-plans)
 
-## Install
+## Install From Release
+
+You can install the pre-production version of foldcli found on [the github releases page](https://github.com/Folderr/foldcli/releases)
+
+Steps:
+1. Download the executable for your system
+2. Move executable to PATH
+
+You can see your PATH by doing
+```powershell
+$env:PATH
+```
+
+example (linux, amd64, path includes $HOME/.local/bin):
+
+```
+FOLDCLI_VERSION=0.0.11
+wget -O foldcli-$FOLDCLI_VERSION.tar.gz https://github.com/Folderr/foldcli/releases/download/$FOLDCLI_VERSION/foldcli-$FOLDCLI_VERSION-linux-amd64.tar.gz
+# make a place to put the files zipped up
+mkdir foldcli-$FOLDCLI_VERSION
+# untar & install to $HOME/.local/bin/foldcli
+tar -xvzf foldcli-$FOLDCLI_VERSION -C foldcli-$FOLDCLI_VERSION
+chmod +x foldcli-$FOLDCLI_VERSION/foldcli
+cp foldcli-$FOLDCLI_VERSION/foldcli $HOME/.local/bin/foldcli
+```
+## Install From Source
 
 Currently the only way to "install" Folderr CLI is to build it yourself using Go. We recommend go 1.20 or higher.
 
@@ -20,8 +46,8 @@ build it yourself steps:
 2. clone repository from https://github.com/Folderr/foldcli
 3. navigate to cli directory
 4. run `go build .`
-5. move executable to PATH [variable]
-6. (linux): run `chmod +x foldcli`
+5. (linux): run `chmod +x foldcli`
+6. move executable to PATH [variable] 
 
 Example:
 
@@ -69,17 +95,16 @@ go build .
 Now you can restart your terminal and use it like
 ::: code-group
 ```sh [Linux]
-foldcli init
+foldcli init folderr
 ```
 ```powershell [Windows]
-foldcli.exe init
+foldcli.exe init folderr
 ```
 :::
 ## Future Plans
 
 Plans for Folderr CLI
 
-- Have the ability to download an executable from github. (Flatpak, native maybe, etc)
 - Better key management
 - Owner transfership (maybe)
 - Account management
