@@ -1,4 +1,4 @@
-# Folderr CLI <Badge type="warning" text="beta" />
+# Getting Started - FoldCLI <Badge type="warning" text="beta" />
 
 Folderr CLI (command-line: foldcli) is a new way to manage Folderr
 Currently under-development however it has the following abilities:

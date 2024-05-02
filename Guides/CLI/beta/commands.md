@@ -1,4 +1,4 @@
-# CLI Commands <Badge text="Work in Progress" type="warning" />
+# FoldCLI Commands <Badge text="Work in Progress" type="warning" />
 
 Hi, were going to be covering the CLI commands that come with the current version of **foldcli** <Badge text="beta" type="warning" />
 

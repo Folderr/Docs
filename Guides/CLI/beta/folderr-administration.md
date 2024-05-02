@@ -1,4 +1,4 @@
-# Folderr CLI <Badge type="warning" text="beta" /> Folderr Admininistration
+# Folderr Admininistration w/FoldCLI <Badge type="warning" text="beta" />
 
 **This assumes you have already followed the [getting started for Folderr CLI](./getting-started.md)**
 
