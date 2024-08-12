@@ -57,14 +57,14 @@ That's why we `chmod 770` the `folderr` directory
 ::: code-group
 ```sh [Linux, Admin]
 cd /etc
-sudo git clone <link not available> folderr
+sudo git clone https://github.com/Folderr/Folderr folderr
 sudo chown folderr:folderr folderr
 sudo chmod 770 folderr
 cd folderr
 npm install
 ```
 ```sh [Linux, User]
-git clone <link not available> folderr
+git clone https://github.com/Folderr/Folderr folderr
 chmod 770 folderr
 cd folderr
 npm install
