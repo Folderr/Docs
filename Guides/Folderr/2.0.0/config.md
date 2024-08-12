@@ -30,6 +30,7 @@ httpsCertOptions | The certificate options for Folderrs HTTPs         | [Object]
 - `0` - Disabled
 - `1` - Admin acceptance only
 - `2` - Use emails
+- `3` - Whitelist (Not planned for V2, but planned for later)
 
 #### Sentry
 
@@ -124,7 +125,7 @@ rejectUnauthorized | Whether or not to reject invalid certificates | Boolean | `
 
 ```yaml
 mailerOptions:
-    auth: 
+    auth:
         user: no-reply
         pass: SomePassword
     port: 587 # One of the standard SMTP ports, along with 443.

@@ -13,7 +13,8 @@
 
 - [Git](https://git-scm.com/downloads)
 - [NodeJS](https://nodejs.org) version 16 or higher with crypto support
-- [TypeScript](https://www.typescriptlang.org/index.html#download-links)
+- [TypeScript](https://www.typescriptlang.org/index.html#download-links) or;
+- [SWC CLI](https://swc.rs/docs/getting-started)
 - [Node-gyp](https://github.com/nodejs/node-gyp) used to build dependencies
 - [MongoDB Server Community or Enterprise](https://docs.mongodb.com/manual/administration/install-community/) or [Atlas](https://www.mongodb.com/cloud/atlas)
 
@@ -78,11 +79,18 @@ Once Folderr has finished installing continue on to the configuration guide [her
 
 This initially sets folderr up for your owner account and configures encryption keys.
 
-```sh
+::: code-group
+```sh [SWC]
 cd folderr
 npm run build
 npm run setup
 ```
+```sh [TypeScript]
+cd folderr
+npm run build:tsc
+npm run setup
+```
+:::
 
 ## Starting/Deploying
 

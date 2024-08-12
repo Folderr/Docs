@@ -5,32 +5,35 @@
 <!---- [[toc]] ---->
 
 - [Assumptions](#assumptions)
-	- [Install directories](#install-directories)
+  - [Install directories](#install-directories)
 - [Ways to Deploy Folderr](#ways-to-deploy-folderr)
 - [Extended Deployment](#extended-deployment)
-	- [Systemd Configuration](#systemd-configuration)
-	- [Running Folderr](#running-folderr)
+  - [Systemd Configuration](#systemd-configuration)
+  - [Running Folderr](#running-folderr)
 - [Get Status of Folderr](#get-status-of-folderr)
 - [Logs](#logs)
 - [Log rotation](#rotate-logs)
-	- [Example](#example-requires-modification)
+  - [Example](#example-requires-modification)
 
 ## Assumptions
 
 Supported operating systems for deployment: `Linux`
 We assume you are knowledgeable enough to convert commands from `Rocky Linux/RHEL` linux distros to your distro of choice
 We also assume you have already configured Folderr and set it up.
+
 ### Install directories
+
 - `/etc/folderr/` - This is used for scripts for users that are sudoers/root or otherwise a superuser/admin
 - `/home/folderr/folderr` - Used for non admins
 
 ## Ways to Deploy Folderr
 
 There are several ways to deploy Folderr
-- [PM2](https://npmjs.com/package/pm2) - Easy to use. For a process monitor, it's fairly memory intensive.
+
+- [PM2](https://npmjs.com/package/pm2) - Our favorite, for non-Linux platforms and beginners. However it is memory intensive for small deployments.
 - Systemd - Not very memory intensive, not very feature-full, limited to `Linux` operating systems
 
-If you have any others you would like us to include, hit the ***Edit this page*** link at the bottom of the page.
+If you have any others you would like us to include, hit the **_Edit this page_** link at the bottom of the page.
 
 - Testing? Check directly below.
 
@@ -41,6 +44,7 @@ Permissions required: `read`, `write`, and `execute` for all directories and `re
 # assumption: your directory is the directory that Folderr is installed in
 npm run start
 ```
+
 :::
 
 ## Extended Deployment
@@ -50,6 +54,7 @@ This file should be called `folderr.service` and be placed in your `systemd` dir
 
 Google will be your best friend for finding out where that is.
 ::: code-group
+
 ```sh [Systemd, RHEL Admin]
 [Unit]
 Description=Folderr FOSS File Host
@@ -88,28 +93,34 @@ Restart=always
 [Install]
 WantedBy=default.target
 ```
+
 :::
 
 ### Running Folderr
 
 ::: code-group
+
 ```sh [PM2]
 # assumption: you are in your folderr install directory
 pm2 start dist/src/backend/index.js
 ```
+
 ```sh [Systemd, Admin]
 sudo systemctl start folderr
 ```
+
 ```sh [Systemd, User]
 systemctl --user start folderr
 # Make Folderr stay online when you logout
 loginctl enable-linger $USER
 ```
+
 :::
 
 ## Get status of Folderr
 
 ::: code-group
+
 ```sh [PM2]
 pm2 monit # This shows logs and all that jazz, as well as node version.
 # or
@@ -119,14 +130,17 @@ pm2 ls
 ```sh [Systemd, Admin]
 sudo systemctl status folderr
 ```
+
 ```sh [Systemd, User]
 systemctl --user status folderr
 ```
+
 :::
 
 ## Logs
 
 Your logs are going to be in `/etc/Folderr/logs` the files you're looking for are
+
 - `all.log` - As the filename suggests, all logs go here.
 - `error.log` - Every error goes here. They're easiest to find here.
 - `debug.log` - This is only active when DEBUG mode is enabled.
@@ -142,8 +156,10 @@ Non-Administrative Users need to setup logrotate for themselves or have a system
 ### Example (requires modification)
 
 Put this in `/etc/logrotate.d/folderr`
+This will keep your logs for 7 days
 
 ::: code-group
+
 ```sh [Rocky Linux/RHEL Admin]
 /etc/folderr/logs/*.log {
        su folderr folderr
@@ -156,6 +172,7 @@ Put this in `/etc/logrotate.d/folderr`
        copytruncate
 }
 ```
+
 ```sh [Rocky Linux/RHEL User]
 /home/folderr/folderr/logs/*.log {
        daily
