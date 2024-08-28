@@ -26,7 +26,7 @@ We also assume you have already configured Folderr and set it up.
 - `/etc/folderr/` - This is used for scripts for users that are sudoers/root or otherwise a superuser/admin
 - `/home/folderr/folderr` - Used for non admins.
 
-Regardless of whether you are installing as a system admin or a user, change the respective directory (ex `home/folderr/folderr`) to your install directory.
+Regardless of whether you are installing as a system admin or a user, change the respective directory (ex `/home/folderr/folderr`) to your install directory.
 
 ## Ways to Deploy Folderr
 
