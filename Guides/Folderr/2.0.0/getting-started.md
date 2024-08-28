@@ -79,6 +79,8 @@ Once Folderr has finished installing continue on to the configuration guide [her
 
 This initially sets folderr up for your owner account and configures encryption keys.
 
+We recommend trying SWC before TypeScript
+
 ::: code-group
 ```sh [SWC]
 cd folderr

@@ -24,7 +24,9 @@ We also assume you have already configured Folderr and set it up.
 ### Install directories
 
 - `/etc/folderr/` - This is used for scripts for users that are sudoers/root or otherwise a superuser/admin
-- `/home/folderr/folderr` - Used for non admins
+- `/home/folderr/folderr` - Used for non admins.
+
+Regardless of whether you are installing as a system admin or a user, change the respective directory (ex `home/folderr/folderr`) to your install directory.
 
 ## Ways to Deploy Folderr
 
@@ -34,8 +36,6 @@ There are several ways to deploy Folderr
 - Systemd - Not very memory intensive, not very feature-full, limited to `Linux` operating systems
 
 If you have any others you would like us to include, hit the **_Edit this page_** link at the bottom of the page.
-
-- Testing? Check directly below.
 
 ::: details Testing? Click me!
 Permissions required: `read`, `write`, and `execute` for all directories and `read`, and `write` for all files
@@ -53,6 +53,9 @@ npm run start
 This file should be called `folderr.service` and be placed in your `systemd` directory.
 
 Google will be your best friend for finding out where that is.
+
+
+
 ::: code-group
 
 ```sh [Systemd, RHEL Admin]
@@ -93,6 +96,11 @@ Restart=always
 [Install]
 WantedBy=default.target
 ```
+
+You may remove `mongod.service` if you do not have MongoDB installed on the system Folderr will run on
+
+::: info Debugging or Submitting an issue to our github?
+Please add `--enable-source-maps` to the `ExecStart` when debugging or submitting an issue on GitHub
 
 :::
 
@@ -150,7 +158,7 @@ Your logs are going to be in `/etc/Folderr/logs` the files you're looking for ar
 
 Folderr recommends using the builtin `logrotate` daemon on Linux.
 ::: warning Warning Non-Admin Users!
-Non-Administrative Users need to setup logrotate for themselves or have a system admin do it.
+Non-Administrative Users need to setup the logrotate daemon for themselves or have a system admin do it.
 :::
 
 ### Example (requires modification)
